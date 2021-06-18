@@ -3,7 +3,7 @@
 
 using namespace pybind11numpyexample;
 
-TEST_CASE( "vector_as_list", "[vector_as_list]" ){
-  REQUIRE(vector_as_list(0) == std::vector<int>{0});
-  REQUIRE(vector_as_list(5) == std::vector<int>{0, 1, 2, 3, 4});
+TEST_CASE( "make_vector", "[make_vector]" ){
+  REQUIRE(make_vector<int>(0) == std::vector<int>{0});
+  REQUIRE(make_vector<int>(5) == std::vector<int>{0, 1, 2, 3, 4});
 }

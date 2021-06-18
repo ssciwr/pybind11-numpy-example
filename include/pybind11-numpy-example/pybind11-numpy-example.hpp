@@ -1,14 +1,20 @@
 #pragma once
 
 #include <vector>
+#include <numeric>
 
 namespace pybind11numpyexample {
 
-/** @brief Return a vector as a Python List
+/** @brief Helper function that returns a vector of given size and type
  *
+ * @tparam T The type of element
  * @param size The size of the vector to return
- * @returns the vector as a Python List
+ * @returns a vector of given size and type
  */
-std::vector<int> vector_as_list(std::size_t size);
+template <typename T> std::vector<T> make_vector(std::size_t size){
+  std::vector<T> v(size, 0);
+  std::iota(v.begin(), v.end(), 0);
+  return v;
+}
 
 } // namespace pybind11numpyexample
