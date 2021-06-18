@@ -1,16 +1,14 @@
 #pragma once
 
+#include <vector>
+
 namespace pybind11numpyexample {
 
-/** @brief A very interesting function!
+/** @brief Return a vector as a Python List
  *
- * This function is of course just a self-explanatory placeholder,
- * but surprisingly often, things aren't this easy. You should
- * therefore *really* document your C++ code with Doxygen!
- *
- * @param x The number to increase
- * @returns the successor of x
+ * @param size The size of the vector to return
+ * @returns the vector as a Python List
  */
-int add_one(int x);
+std::vector<int> vector_as_list(std::size_t size);
 
 } // namespace pybind11numpyexample

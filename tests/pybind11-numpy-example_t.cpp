@@ -3,8 +3,7 @@
 
 using namespace pybind11numpyexample;
 
-TEST_CASE( "add_one", "[adder]" ){
-  REQUIRE(add_one(0) == 1);
-  REQUIRE(add_one(123) == 124);
-  REQUIRE(add_one(-1) == 0);
+TEST_CASE( "vector_as_list", "[vector_as_list]" ){
+  REQUIRE(vector_as_list(0) == std::vector<int>{0});
+  REQUIRE(vector_as_list(5) == std::vector<int>{0, 1, 2, 3, 4});
 }

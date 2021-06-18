@@ -19,10 +19,6 @@ set(BUILD_DOCS ON CACHE BOOL "Enable building of documentation")
 # compile the library
 add_subdirectory(src)
 
-
-# compile the application
-add_subdirectory(app)
-
 # compile the tests
 include(CTest)
 if(BUILD_TESTING)

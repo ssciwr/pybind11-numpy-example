@@ -10,7 +10,7 @@ namespace pybind11numpyexample {
 PYBIND11_MODULE(pybind11numpyexample, m)
 {
   m.doc() = "Python Bindings for pybind11-numpy-example";
-  m.def("add_one", &add_one, "Increments an integer value");
+  m.def("vector_as_list", &vector_as_list, "Returns a vector of ints as a Python List");
 }
 
 } // namespace pybind11numpyexample
