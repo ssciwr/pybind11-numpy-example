@@ -6,28 +6,26 @@
 [![Documentation Status](https://readthedocs.org/projects/pybind11-numpy-example/badge/)](https://pybind11-numpy-example.readthedocs.io/)
 
 # What
-
 A simple example of how to use [pybind11](https://github.com/pybind/pybind11) with [numpy](https://numpy.org/).
 
 This C++/Python library creates a `std::vector` of 16-bit ints,
-and exposes it either as a Python List or as a NumPy array.
+and provides a Python interface to the contents of this vector in a few different ways:
+- a Python [List](https://docs.python.org/3/tutorial/datastructures.html#more-on-lists)
+- a NumPy [ndarray](https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html).
 
 # Why
-
 Python Lists are great!
-However, for the specific use case of storing many small elements of the same type,
-a Numpy array is faster and uses a lot less memory:
+However, when storing many small elements of the same type,
+a Numpy array is much faster and uses a lot less memory:
 
 ![Memory used vs number of elements](scripts/memory.png)
 
 ![Time used vs number of elements](scripts/time.png)
 
-[scripts/memory.png]
-
 # How
 
-See [python/pybind11-numpy-example_python.cpp](python/pybind11-numpy-example_python.cpp) for how to do this in C++ using pybind11.
+The pybind11 code is in [python/pybind11-numpy-example_python.cpp](python/pybind11-numpy-example_python.cpp).
 
-The scripts used to generate the above plots are in [scripts](scripts) 
+The scripts used to generate the above plots are in [scripts](scripts).
 
-This repo was quickly set up using the SSC [C++ Project Cookiecutter](https://github.com/ssciwr/cookiecutter-cpp-project)
+This repo was quickly set up using the SSC [C++ Project Cookiecutter](https://github.com/ssciwr/cookiecutter-cpp-project).
