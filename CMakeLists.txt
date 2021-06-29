@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.9)
 
 # Set a name and a version number for your project:
-project(pybind11-numpy-example VERSION 0.0.1 LANGUAGES CXX)
+project(pybind11-numpy-example VERSION 0.0.2 LANGUAGES CXX)
 
 # Initialize some default paths
 include(GNUInstallDirs)
