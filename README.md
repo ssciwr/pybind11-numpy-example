@@ -9,12 +9,25 @@
 
 A simple example of how to use [pybind11](https://github.com/pybind/pybind11) with [numpy](https://numpy.org/).
 
-This python library simply returns a vector of ints, either as a Python List or as a NumPy array.
+This C++/Python library creates a `std::vector` of 16-bit ints,
+and exposes it either as a Python List or as a NumPy array.
 
 # Why
 
-For many use cases, Python Lists are slow to access and use a lot of memory compared to a NumPy array.
+Python Lists are great!
+However, for the specific use case of storing many small elements of the same type,
+a Numpy array is faster and uses a lot less memory:
 
-# About
+![Memory used vs number of elements](scripts/memory.png)
+
+![Time used vs number of elements](scripts/time.png)
+
+[scripts/memory.png]
+
+# How
+
+See [python/pybind11-numpy-example_python.cpp](python/pybind11-numpy-example_python.cpp) for how to do this in C++ using pybind11.
+
+The scripts used to generate the above plots are in [scripts](scripts) 
 
 This repo was quickly set up using the SSC [C++ Project Cookiecutter](https://github.com/ssciwr/cookiecutter-cpp-project)
