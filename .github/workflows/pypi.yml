@@ -6,6 +6,11 @@ jobs:
   build-wheels:
     name: Build wheels on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
+    env:
+      CIBW_TEST_REQUIRES: 'pytest numpy'
+      CIBW_TEST_COMMAND: 'pytest {project}/python/tests'
+      CIBW_BUILD: 'cp3*-*'
+      CIBW_SKIP: 'pp* *-win32 *-manylinux_i686'
     strategy:
       matrix:
         os: [ubuntu-20.04, windows-2019, macos-10.15]
@@ -16,7 +21,7 @@ jobs:
           submodules: 'recursive'
 
       - name: Build wheels
-        uses: pypa/cibuildwheel@v1.12.0
+        uses: pypa/cibuildwheel@v2.0.0a4
 
       - uses: actions/upload-artifact@v2
         with:
