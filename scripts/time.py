@@ -15,5 +15,7 @@ def doit():
         return pybind11numpyexample.vector_as_list(n)
     elif(data_type == 1):
         return pybind11numpyexample.vector_as_array(n)
+    elif(data_type == 2):
+        return pybind11numpyexample.vector_as_array_nocopy(n)
 
 print(timeit.timeit(doit, number=iters)/iters)

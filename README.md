@@ -10,8 +10,9 @@ A simple example of how to use [pybind11](https://github.com/pybind/pybind11) wi
 
 This C++/Python library creates a `std::vector` of 16-bit ints,
 and provides a Python interface to the contents of this vector in a few different ways:
-- a Python [List](https://docs.python.org/3/tutorial/datastructures.html#more-on-lists)
-- a NumPy [ndarray](https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html).
+- a Python [List](https://docs.python.org/3/tutorial/datastructures.html#more-on-lists) (copy the data)
+- a NumPy [ndarray](https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html) (copy the data).
+- a NumPy [ndarray](https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html) (move the data).
 
 # Why
 Python Lists are great!
