@@ -1,7 +1,7 @@
 #pragma once
 
-#include <vector>
 #include <numeric>
+#include <vector>
 
 namespace pybind11numpyexample {
 
@@ -11,7 +11,7 @@ namespace pybind11numpyexample {
  * @param size The size of the vector to return
  * @returns a vector of given size and type
  */
-template <typename T> std::vector<T> make_vector(std::size_t size){
+template <typename T> std::vector<T> make_vector(std::size_t size) {
   std::vector<T> v(size, 0);
   std::iota(v.begin(), v.end(), 0);
   return v;

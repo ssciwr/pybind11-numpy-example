@@ -1,6 +1,6 @@
+#include <pybind11/numpy.h>
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
-#include <pybind11/numpy.h>
 
 #include "pybind11-numpy-example/pybind11-numpy-example.hpp"
 
@@ -13,8 +13,11 @@ template <typename Sequence>
 inline py::array_t<typename Sequence::value_type> as_pyarray(Sequence &&seq) {
   auto size = seq.size();
   auto data = seq.data();
-  std::unique_ptr<Sequence> seq_ptr = std::make_unique<Sequence>(std::move(seq));
-  auto capsule = py::capsule(seq_ptr.get(), [](void *p) { std::unique_ptr<Sequence>(reinterpret_cast<Sequence*>(p)); });
+  std::unique_ptr<Sequence> seq_ptr =
+      std::make_unique<Sequence>(std::move(seq));
+  auto capsule = py::capsule(seq_ptr.get(), [](void *p) {
+    std::unique_ptr<Sequence>(reinterpret_cast<Sequence *>(p));
+  });
   seq_ptr.release();
   return py::array(size, data, capsule);
 }
@@ -54,13 +57,15 @@ static py::array_t<short> vector_as_array_nocopy(std::size_t size) {
   return as_pyarray(std::move(temp_vector));
 }
 
-PYBIND11_MODULE(pybind11numpyexample, m)
-{
+PYBIND11_MODULE(pybind11numpyexample, m) {
   m.doc() = "Python Bindings for pybind11-numpy-example";
-  m.def("vector_as_list", &vector_as_list, "Returns a vector of 16-bit ints as a Python List");
-  m.def("vector_as_array", &vector_as_array, "Returns a vector of 16-bit ints as a NumPy array");
-  m.def("vector_as_array_nocopy", &vector_as_array_nocopy, "Returns a vector of 16-bit ints as a NumPy array without making a copy of the data");
+  m.def("vector_as_list", &vector_as_list,
+        "Returns a vector of 16-bit ints as a Python List");
+  m.def("vector_as_array", &vector_as_array,
+        "Returns a vector of 16-bit ints as a NumPy array");
+  m.def("vector_as_array_nocopy", &vector_as_array_nocopy,
+        "Returns a vector of 16-bit ints as a NumPy array without making a "
+        "copy of the data");
 }
-
 
 } // namespace pybind11numpyexample
