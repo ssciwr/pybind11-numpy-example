@@ -11,24 +11,24 @@ jobs:
         os: [ubuntu-20.04, macos-10.15, windows-2019]
 
     steps:
-    - uses: actions/checkout@v2
-      with:
-        submodules: 'recursive'
+      - uses: actions/checkout@v2
+        with:
+          submodules: "recursive"
 
-    - name: make build directory
-      run: cmake -E make_directory ${{runner.workspace}}/build
+      - name: make build directory
+        run: cmake -E make_directory ${{runner.workspace}}/build
 
-    - name: configure cmake
-      shell: bash
-      working-directory: ${{runner.workspace}}/build
-      run: cmake $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE=Debug -DBUILD_DOCS=OFF
+      - name: configure cmake
+        shell: bash
+        working-directory: ${{runner.workspace}}/build
+        run: cmake $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE=Debug -DBUILD_DOCS=OFF
 
-    - name: build
-      shell: bash
-      working-directory: ${{runner.workspace}}/build
-      run: cmake --build .
+      - name: build
+        shell: bash
+        working-directory: ${{runner.workspace}}/build
+        run: cmake --build .
 
-    - name: run tests
-      shell: bash
-      working-directory: ${{runner.workspace}}/build
-      run: ctest
+      - name: run tests
+        shell: bash
+        working-directory: ${{runner.workspace}}/build
+        run: ctest
