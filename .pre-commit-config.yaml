@@ -1,33 +1,32 @@
 repos:
-
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.0.1
     hooks:
-    - id: check-yaml
-    - id: end-of-file-fixer
-    - id: trailing-whitespace
-    - id: mixed-line-ending
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: mixed-line-ending
 
   - repo: https://github.com/psf/black
     rev: 21.9b0
     hooks:
-    - id: black
+      - id: black
 
   - repo: https://github.com/cheshirekow/cmake-format-precommit
     rev: v0.6.13
     hooks:
-    - id: cmake-format
-      additional_dependencies: [pyyaml==5.4.1]
+      - id: cmake-format
+        additional_dependencies: [pyyaml==5.4.1]
 
   - repo: https://github.com/kynan/nbstripout
     rev: 0.5.0
     hooks:
-    - id: nbstripout
+      - id: nbstripout
 
   - repo: https://github.com/ssciwr/clang-format-hook
     rev: v12.0.1
     hooks:
-    - id: clang-format
+      - id: clang-format
 
   - repo: https://github.com/pre-commit/mirrors-prettier
     rev: v2.4.1
