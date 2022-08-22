@@ -75,7 +75,7 @@ with open(path.join(path.abspath(path.dirname(__file__)), "README.md")) as f:
 
 setup(
     name="pybind11-numpy-example",
-    version="0.0.3",
+    version="0.0.4",
     author="Liam Keegan",
     author_email="liam@keegan.ch",
     description="An example of using numpy with pybind11",
@@ -95,6 +95,7 @@ setup(
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
         "Programming Language :: Python :: Implementation :: CPython",
         "Programming Language :: Python :: Implementation :: PyPy",
         "License :: OSI Approved :: MIT License",
