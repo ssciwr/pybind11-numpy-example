@@ -1,9 +1,9 @@
-cmake_minimum_required(VERSION 3.9)
+cmake_minimum_required(VERSION 3.15..3.25)
 
 # Set a name and a version number for your project:
 project(
   pybind11-numpy-example
-  VERSION 0.0.4
+  VERSION 0.0.5
   LANGUAGES CXX)
 
 # Initialize some default paths
@@ -15,33 +15,28 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
-# Compilation options
-set(BUILD_PYTHON
-    ON
-    CACHE BOOL "Enable building of Python bindings")
-set(BUILD_DOCS
-    ON
-    CACHE BOOL "Enable building of documentation")
+# Configuration options
+option(BUILD_PYTHON "Enable building of Python bindings" ON)
+option(BUILD_DOCS "Enable building of documentation" ON)
 
-# compile the library
+# Build the library
 add_subdirectory(src)
 
-# compile the tests
+# Build the tests
 include(CTest)
 if(BUILD_TESTING)
   add_subdirectory(ext/Catch2)
-  include(./ext/Catch2/contrib/Catch.cmake)
+  include(./ext/Catch2/extras/Catch.cmake)
   add_subdirectory(tests)
 endif()
 
+# Build the documentation
 if(BUILD_DOCS)
-  # Add the documentation
   add_subdirectory(doc)
 endif()
-if(BUILD_PYTHON)
-  # Add Python bindings
-  add_subdirectory(ext/pybind11)
 
+# Build the python bindings
+if(BUILD_PYTHON)
   add_subdirectory(python)
 endif()
 

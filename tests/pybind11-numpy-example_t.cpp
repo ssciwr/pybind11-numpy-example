@@ -1,5 +1,5 @@
-#include "catch2/catch.hpp"
 #include "pybind11-numpy-example/pybind11-numpy-example.hpp"
+#include <catch2/catch_test_macros.hpp>
 
 using namespace pybind11numpyexample;
 
