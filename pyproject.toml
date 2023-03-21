@@ -1,0 +1,38 @@
+[build-system]
+requires = ["scikit-build-core", "pybind11"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "pybind11-numpy-example"
+version = "0.0.5"
+description = "An example of using numpy with pybind11"
+readme = "README.md"
+license = {text = "MIT"}
+authors=[{name="Liam Keegan", email="liam@keegan.ch"}]
+requires-python = ">=3.7"
+classifiers=[
+    "Programming Language :: C++",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+    "Operating System :: MacOS :: MacOS X",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "License :: OSI Approved :: MIT License",
+]
+
+[project.urls]
+Github = "https://github.com/ssciwr/pybind11-numpy-example"
+
+[project.optional-dependencies]
+test = ["pytest", "numpy"]
+
+[tool.scikit-build.cmake.define]
+BUILD_PYTHON = "ON"
+BUILD_TESTING = "OFF"
+BUILD_DOCS = "OFF"

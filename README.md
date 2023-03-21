@@ -30,6 +30,12 @@ a Numpy array is much faster and uses a lot less memory:
 
 The pybind11 code is in [python/pybind11-numpy-example_python.cpp](https://github.com/ssciwr/pybind11-numpy-example/blob/main/python/pybind11-numpy-example_python.cpp).
 
+The python project is defined in [pyproject.toml](https://github.com/ssciwr/pybind11-numpy-example/blob/main/pyproject.toml)
+and uses [scikit-build-core](https://github.com/scikit-build/scikit-build-core).
+
+Each tagged commit triggers a [GitHub action job](https://github.com/ssciwr/pybind11-numpy-example/actions/workflows/pypi.yml)
+which uses [cibuildwheel](https://cibuildwheel.readthedocs.io/) to build and upload wheels to [PyPI](https://pypi.org/project/pybind11-numpy-example/).
+
 The scripts used to generate the above plots are in [scripts](https://github.com/ssciwr/pybind11-numpy-example/tree/main/scripts).
 
 This repo was quickly set up using the SSC [C++ Project Cookiecutter](https://github.com/ssciwr/cookiecutter-cpp-project).
