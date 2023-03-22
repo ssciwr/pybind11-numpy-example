@@ -6,14 +6,9 @@ jobs:
   build-wheels:
     name: Build wheels on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
-    env:
-      CIBW_TEST_REQUIRES: "pytest numpy"
-      CIBW_TEST_COMMAND: "python -m pytest {project}/python/tests -v"
-      CIBW_TEST_SKIP: "pp* *-musllinux* *-manylinux_i686"
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
-
     steps:
       - uses: actions/checkout@v3
 

@@ -31,8 +31,14 @@ Github = "https://github.com/ssciwr/pybind11-numpy-example"
 
 [project.optional-dependencies]
 test = ["pytest", "numpy"]
+docs = ["cmake", "breathe"]
 
 [tool.scikit-build.cmake.define]
 BUILD_PYTHON = "ON"
 BUILD_TESTING = "OFF"
 BUILD_DOCS = "OFF"
+
+[tool.cibuildwheel]
+test-extras = "test"
+test-command = "python -m pytest {project}/python/tests -v"
+test-skip = "pp* *-musllinux* *-manylinux_i686"
