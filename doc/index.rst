@@ -44,6 +44,12 @@ How
 The pybind11 code is in
 `python/pybind11-numpy-example\_python.cpp <https://github.com/ssciwr/pybind11-numpy-example/blob/main/python/pybind11-numpy-example_python.cpp>`__.
 
+The python project is defined in `pyproject.toml <https://github.com/ssciwr/pybind11-numpy-example/blob/main/pyproject.toml>`__
+and uses `scikit-build-core <https://github.com/scikit-build/scikit-build-core>`__.
+
+Each tagged commit triggers a `GitHub action job <https://github.com/ssciwr/pybind11-numpy-example/actions/workflows/pypi.yml>`__
+which uses `cibuildwheel <https://cibuildwheel.readthedocs.io/>`__ to build and upload wheels to `PyPI <https://pypi.org/project/pybind11-numpy-example/>`__.
+
 The scripts used to generate the above plots are in
 `scripts <https://github.com/ssciwr/pybind11-numpy-example/tree/main/scripts>`__.
 
