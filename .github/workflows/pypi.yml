@@ -23,6 +23,8 @@ jobs:
     needs: [build-wheels]
     runs-on: ubuntu-latest
     environment: release
+    permissions:
+      id-token: write
     if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags/')
     steps:
       - uses: actions/download-artifact@v3
