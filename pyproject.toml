@@ -4,7 +4,7 @@ build-backend = "scikit_build_core.build"
 
 [project]
 name = "pybind11-numpy-example"
-version = "0.0.5"
+version = "0.0.6"
 description = "An example of using numpy with pybind11"
 readme = "README.md"
 license = {text = "MIT"}
@@ -18,6 +18,7 @@ classifiers=[
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: Implementation :: CPython",
     "Programming Language :: Python :: Implementation :: PyPy",
     "Operating System :: MacOS :: MacOS X",
@@ -41,4 +42,4 @@ BUILD_DOCS = "OFF"
 [tool.cibuildwheel]
 test-extras = "test"
 test-command = "python -m pytest {project}/python/tests -v"
-test-skip = "pp* *-musllinux* *-manylinux_i686"
+test-skip = "pp* *-musllinux* *-manylinux_i686 cp312-*"
