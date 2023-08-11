@@ -1,8 +1,9 @@
 # pybind11-numpy-example
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/lkeegan/pybind11-numpy-example/ci.yml?branch=main)](https://github.com/lkeegan/pybind11-numpy-example/actions/workflows/ci.yml)
 [![PyPI Release](https://img.shields.io/pypi/v/pybind11-numpy-example.svg)](https://pypi.org/project/pybind11-numpy-example)
+[![Python Versions](https://img.shields.io/pypi/pyversions/pybind11-numpy-example)](https://pypi.org/project/pybind11-numpy-example)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/lkeegan/pybind11-numpy-example/ci.yml?branch=main)](https://github.com/lkeegan/pybind11-numpy-example/actions/workflows/ci.yml)
 [![Documentation Status](https://readthedocs.org/projects/pybind11-numpy-example/badge/)](https://pybind11-numpy-example.readthedocs.io/)
 
 # What
