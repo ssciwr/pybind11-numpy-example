@@ -4,7 +4,7 @@ build-backend = "scikit_build_core.build"
 
 [project]
 name = "pybind11-numpy-example"
-version = "0.0.6"
+version = "0.0.7"
 description = "An example of using numpy with pybind11"
 readme = "README.md"
 license = {text = "MIT"}
@@ -42,4 +42,4 @@ BUILD_DOCS = "OFF"
 [tool.cibuildwheel]
 test-extras = "test"
 test-command = "python -m pytest {project}/python/tests -v"
-test-skip = "pp* *-musllinux* *-manylinux_i686 cp312-*"
+test-skip = "pp* *-musllinux* *-manylinux_i686"
