@@ -4,7 +4,7 @@ build-backend = "scikit_build_core.build"
 
 [project]
 name = "pybind11-numpy-example"
-version = "0.0.7"
+version = "0.0.8"
 description = "An example of using numpy with pybind11"
 readme = "README.md"
 license = {text = "MIT"}
@@ -32,7 +32,7 @@ Github = "https://github.com/ssciwr/pybind11-numpy-example"
 
 [project.optional-dependencies]
 test = ["pytest", "numpy"]
-docs = ["cmake", "breathe"]
+docs = ["cmake", "breathe", "sphinx_rtd_theme"]
 
 [tool.scikit-build.cmake.define]
 BUILD_PYTHON = "ON"
