@@ -9,7 +9,9 @@ description = "An example of using numpy with pybind11"
 readme = "README.md"
 license = {text = "MIT"}
 authors=[{name="Liam Keegan", email="liam@keegan.ch"}]
+maintainers=[{name="Liam Keegan", email="liam@keegan.ch"}]
 requires-python = ">=3.7"
+keywords = ["pybind11", "cibuildwheel", "c++", "pypi", "numpy", "simple", "example"]
 classifiers=[
     "Programming Language :: C++",
     "Programming Language :: Python :: 3 :: Only",
@@ -29,6 +31,7 @@ classifiers=[
 
 [project.urls]
 Github = "https://github.com/ssciwr/pybind11-numpy-example"
+Documentation = "https://pybind11-numpy-example.readthedocs.io"
 
 [project.optional-dependencies]
 test = ["pytest", "numpy"]
@@ -41,5 +44,5 @@ BUILD_DOCS = "OFF"
 
 [tool.cibuildwheel]
 test-extras = "test"
-test-command = "python -m pytest {project}/python/tests -v"
+test-command = "python -m pytest {project}/tests/python -v"
 test-skip = "pp* *-musllinux* *-manylinux_i686"

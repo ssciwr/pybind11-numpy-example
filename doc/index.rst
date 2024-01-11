@@ -42,7 +42,7 @@ How
 ===
 
 The pybind11 code is in
-`python/pybind11-numpy-example\_python.cpp <https://github.com/ssciwr/pybind11-numpy-example/blob/main/python/pybind11-numpy-example_python.cpp>`__.
+`src/pybind11\_numpy\_example\_python.cpp <https://github.com/ssciwr/pybind11-numpy-example/blob/main/src/pybind11_numpy_example_python.cpp>`__.
 
 The python project is defined in `pyproject.toml <https://github.com/ssciwr/pybind11-numpy-example/blob/main/pyproject.toml>`__
 and uses `scikit-build-core <https://github.com/scikit-build/scikit-build-core>`__.

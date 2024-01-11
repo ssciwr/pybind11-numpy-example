@@ -14,23 +14,13 @@ jobs:
         with:
           submodules: "recursive"
 
-      - name: Make build directory
-        run: cmake -E make_directory ${{runner.workspace}}/build
-
-      - name: Configure cmake
-        shell: bash
-        working-directory: ${{runner.workspace}}/build
-        run: cmake $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE=Debug -DBUILD_DOCS=OFF -DBUILD_TESTING=ON -DBUILD_PYTHON=OFF
-
-      - name: Build
-        shell: bash
-        working-directory: ${{runner.workspace}}/build
-        run: cmake --build .
-
-      - name: Run tests
-        shell: bash
-        working-directory: ${{runner.workspace}}/build
-        run: ctest
+      - name: Build and run c++ tests
+        run: |
+          mkdir build
+          cd build
+          cmake -DCMAKE_BUILD_TYPE=Debug -DBUILD_DOCS=OFF -DBUILD_PYTHON=OFF -DBUILD_TESTING=ON ..
+          cmake --build .
+          ctest
 
   python:
     name: "${{ matrix.os }} :: Python ${{ matrix.python-version }}"

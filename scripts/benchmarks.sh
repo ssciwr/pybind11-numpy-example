@@ -8,8 +8,9 @@ echo "#n time (seconds)" > time_list.txt
 cp time_list.txt time_array.txt
 cp time_list.txt time_array_nocopy.txt
 
-for n in 1000 10000 100000 1000000 10000000 50000000 100000000 200000000 300000000 400000000
+for n in 1000 10000 100000 1000000 10000000 50000000 100000000 200000000 300000000 400000000 600000000 800000000 1000000000 1200000000
 do
+    echo $n
     m_list=$(./memory.py $n 0)
     m_array=$(./memory.py $n 1)
     m_array_nocopy=$(./memory.py $n 2)
@@ -24,9 +25,9 @@ do
     echo "${n} ${t_array}" >> time_array.txt
     echo "${n} ${t_array_nocopy}" >> time_array_nocopy.txt
 done
-
-for n in 1000000000 2000000000 3000000000 4000000000
+for n in 2000000000 3000000000 4000000000 6000000000 8000000000 10000000000 12000000000
 do
+    echo $n
     m_array=$(./memory.py $n 1)
     echo "${n} ${m_array}" >> mem_array.txt
     m_array_nocopy=$(./memory.py $n 2)
@@ -38,8 +39,9 @@ do
     echo "${n} ${t_array_nocopy}" >> time_array_nocopy.txt
 done
 
-for n in 5000000000 6000000000 7000000000 8000000000
+for n in 14000000000 16000000000 18000000000 20000000000 24000000000
 do
+    echo $n
     m_array_nocopy=$(./memory.py $n 2)
     echo "${n} ${m_array_nocopy}" >> mem_array_nocopy.txt
 

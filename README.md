@@ -29,9 +29,9 @@ a Numpy array is much faster and uses a lot less memory:
 
 # How
 
-The pybind11 code is in [python/pybind11-numpy-example_python.cpp](https://github.com/ssciwr/pybind11-numpy-example/blob/main/python/pybind11-numpy-example_python.cpp).
+The pybind11 code is in [src/pybind11_numpy_example_python.cpp](https://github.com/ssciwr/pybind11-numpy-example/blob/main/src/pybind11_numpy_example_python.cpp).
 
-The python project is defined in [pyproject.toml](https://github.com/ssciwr/pybind11-numpy-example/blob/main/pyproject.toml)
+The python package is defined in [pyproject.toml](https://github.com/ssciwr/pybind11-numpy-example/blob/main/pyproject.toml)
 and uses [scikit-build-core](https://github.com/scikit-build/scikit-build-core).
 
 Each tagged commit triggers a [GitHub action job](https://github.com/ssciwr/pybind11-numpy-example/actions/workflows/pypi.yml)

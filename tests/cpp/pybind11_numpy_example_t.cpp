@@ -1,4 +1,4 @@
-#include "pybind11-numpy-example/pybind11-numpy-example.hpp"
+#include "pybind11_numpy_example/pybind11_numpy_example.hpp"
 #include <catch2/catch_test_macros.hpp>
 
 using namespace pybind11numpyexample;
