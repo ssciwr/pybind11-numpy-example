@@ -1,34 +1,29 @@
 import pybind11_numpy_example as pne
 import numpy as np
+import pytest
 
 
-def test_pybind11_numpy_example():
-    assert pne.pure_python_list(0) == []
-    assert pne.pure_python_list(3) == [0, 1, 2]
+n_values = [0, 1, 2, 17, 159]
 
-    assert pne.vector_as_list(0) == []
-    assert pne.vector_as_list(3) == [0, 1, 2]
 
-    a0 = pne.vector_as_array(0)
-    assert type(a0) == np.ndarray
-    assert len(a0) == 0
-    assert a0.dtype == np.int16
-    a3 = pne.vector_as_array(3)
-    assert type(a3) == np.ndarray
-    assert len(a3) == 3
-    assert a3.dtype == np.int16
-    assert a3[0] == 0
-    assert a3[1] == 1
-    assert a3[2] == 2
+@pytest.mark.parametrize("list_func", [pne.pure_python_list, pne.vector_as_list])
+@pytest.mark.parametrize("n", n_values)
+def test_pybind11_numpy_example_list(list_func, n):
+    l = list_func(n)
+    assert isinstance(l, list)
+    assert len(l) == n
+    for i in range(n):
+        assert l[i] == i
 
-    a0 = pne.vector_as_array_nocopy(0)
-    assert type(a0) == np.ndarray
-    assert len(a0) == 0
-    assert a0.dtype == np.int16
-    a3 = pne.vector_as_array_nocopy(3)
-    assert type(a3) == np.ndarray
-    assert len(a3) == 3
-    assert a3.dtype == np.int16
-    assert a3[0] == 0
-    assert a3[1] == 1
-    assert a3[2] == 2
+
+@pytest.mark.parametrize(
+    "ndarray_func", [pne.vector_as_array, pne.vector_as_array_nocopy]
+)
+@pytest.mark.parametrize("n", n_values)
+def test_pybind11_numpy_example_ndarray(ndarray_func, n):
+    a = ndarray_func(n)
+    assert isinstance(a, np.ndarray)
+    assert len(a) == n
+    assert a.dtype == np.int16
+    for i in range(n):
+        assert a[i] == i
