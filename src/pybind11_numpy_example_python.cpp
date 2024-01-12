@@ -2,7 +2,7 @@
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
 
-#include "pybind11-numpy-example/pybind11-numpy-example.hpp"
+#include "pybind11_numpy_example/pybind11_numpy_example.hpp"
 
 namespace py = pybind11;
 
@@ -57,7 +57,7 @@ static py::array_t<short> vector_as_array_nocopy(std::size_t size) {
   return as_pyarray(std::move(temp_vector));
 }
 
-PYBIND11_MODULE(pybind11numpyexample, m) {
+PYBIND11_MODULE(_pybind11_numpy_example, m) {
   m.doc() = "Python Bindings for pybind11-numpy-example";
   m.def("vector_as_list", &vector_as_list,
         "Returns a vector of 16-bit ints as a Python List");
