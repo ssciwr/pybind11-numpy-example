@@ -4,13 +4,14 @@ build-backend = "scikit_build_core.build"
 
 [project]
 name = "pybind11-numpy-example"
-version = "0.0.10"
+version = "0.0.11"
 description = "An example of using numpy with pybind11"
 readme = "README.md"
 license = {text = "MIT"}
 authors=[{name="Liam Keegan", email="liam@keegan.ch"}]
 maintainers=[{name="Liam Keegan", email="liam@keegan.ch"}]
 requires-python = ">=3.7"
+dependencies = ["numpy"]
 keywords = ["pybind11", "cibuildwheel", "c++", "pypi", "numpy", "simple", "example"]
 classifiers=[
     "Programming Language :: C++",
@@ -34,7 +35,7 @@ Github = "https://github.com/ssciwr/pybind11-numpy-example"
 Documentation = "https://pybind11-numpy-example.readthedocs.io"
 
 [project.optional-dependencies]
-test = ["pytest", "numpy"]
+test = ["pytest"]
 docs = ["cmake", "breathe", "sphinx_rtd_theme"]
 
 [tool.scikit-build.cmake.define]
