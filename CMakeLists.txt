@@ -1,9 +1,9 @@
-cmake_minimum_required(VERSION 3.15..3.26)
+cmake_minimum_required(VERSION 3.15..3.29)
 
 # Set a name and a version number for your project:
 project(
   pybind11-numpy-example
-  VERSION 0.0.10
+  VERSION 0.0.12
   LANGUAGES CXX)
 
 # Initialize some default paths
