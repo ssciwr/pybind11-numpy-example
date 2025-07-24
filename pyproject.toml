@@ -22,8 +22,8 @@ classifiers=[
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
     "Programming Language :: Python :: Implementation :: CPython",
-    "Programming Language :: Python :: Implementation :: PyPy",
     "Operating System :: MacOS :: MacOS X",
     "Operating System :: Microsoft :: Windows",
     "Operating System :: POSIX :: Linux",
@@ -47,4 +47,4 @@ BUILD_DOCS = "OFF"
 [tool.cibuildwheel]
 test-extras = "test"
 test-command = "python -m pytest {project}/tests/python -v"
-test-skip = "pp* *-musllinux* *-manylinux_i686"
+test-skip = "*-musllinux* *-manylinux_i686"
