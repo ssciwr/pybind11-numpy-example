@@ -7,17 +7,16 @@ name = "pybind11-numpy-example"
 version = "1.0.1"
 description = "An example of using numpy with pybind11"
 readme = "README.md"
-license = {text = "MIT"}
+license = "MIT"
+license-files = ["LICENSE.md"]
 authors=[{name="Liam Keegan", email="liam@keegan.ch"}]
 maintainers=[{name="Liam Keegan", email="liam@keegan.ch"}]
-requires-python = ">=3.8"
+requires-python = ">=3.10"
 dependencies = ["numpy"]
 keywords = ["pybind11", "cibuildwheel", "c++", "pypi", "numpy", "simple", "example", "wheel", "pypi", "conda-forge"]
 classifiers=[
     "Programming Language :: C++",
     "Programming Language :: Python :: 3 :: Only",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
@@ -27,7 +26,6 @@ classifiers=[
     "Operating System :: MacOS :: MacOS X",
     "Operating System :: Microsoft :: Windows",
     "Operating System :: POSIX :: Linux",
-    "License :: OSI Approved :: MIT License",
 ]
 
 [project.urls]
