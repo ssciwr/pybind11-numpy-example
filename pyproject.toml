@@ -1,27 +1,29 @@
 [build-system]
-requires = ["scikit-build-core", "pybind11"]
+requires = ["scikit-build-core>=0.10", "pybind11>=3"]
 build-backend = "scikit_build_core.build"
 
 [project]
 name = "pybind11-numpy-example"
-version = "1.0.1"
+version = "1.0.2"
 description = "An example of using numpy with pybind11"
 readme = "README.md"
 license = "MIT"
 license-files = ["LICENSE.md"]
 authors=[{name="Liam Keegan", email="liam@keegan.ch"}]
 maintainers=[{name="Liam Keegan", email="liam@keegan.ch"}]
-requires-python = ">=3.10"
+requires-python = ">=3.9"
 dependencies = ["numpy"]
 keywords = ["pybind11", "cibuildwheel", "c++", "pypi", "numpy", "simple", "example", "wheel", "pypi", "conda-forge"]
 classifiers=[
     "Programming Language :: C++",
     "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
     "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: 3.15",
     "Programming Language :: Python :: Implementation :: CPython",
     "Operating System :: MacOS :: MacOS X",
     "Operating System :: Microsoft :: Windows",
