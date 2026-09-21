@@ -8,7 +8,7 @@ repos:
       - id: mixed-line-ending
 
   - repo: https://github.com/psf/black-pre-commit-mirror
-    rev: 26.3.1
+    rev: 26.5.1
     hooks:
       - id: black
 
@@ -24,7 +24,7 @@ repos:
       - id: nbstripout
 
   - repo: https://github.com/pre-commit/mirrors-clang-format
-    rev: v22.1.2
+    rev: v22.1.5
     hooks:
       - id: clang-format
 
